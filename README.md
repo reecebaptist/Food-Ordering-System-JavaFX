@@ -11,5 +11,5 @@ IDEs used:
   
  <big> Output: </big><br>
  
- <img src="FOS\Outputs\Page1.png" height=900 width=1000>
+ <img src="FOS\Outputs\Page1.png" height=600 width=800>
   
