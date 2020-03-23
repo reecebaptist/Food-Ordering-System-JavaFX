@@ -1,6 +1,6 @@
 # Food-Ordering-System-JavaFX
 
-Food Ordering System built using JavaFX and DataBase Connectivty. 
+<b>Food Ordering System built using JavaFX and DataBase Connectivty. </b>
 
 IDEs used:
   1. NetBeans IDE 8.2
