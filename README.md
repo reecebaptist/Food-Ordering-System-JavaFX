@@ -7,7 +7,8 @@ IDEs used:
   2. Scene Builder
   3. XAMPP Control Panel
   
-  This is a project developed solely for educational purposes. The images are not owned by me. 
+  This is a project developed solely for educational purposes. 
+  The images are not owned by the creator. 
   
  <big> Output: </big><br>
  
