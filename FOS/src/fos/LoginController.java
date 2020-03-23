@@ -18,6 +18,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -25,6 +26,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+
+
+import javafx.scene.Parent;
+
 
 /**
  * FXML Controller class
@@ -39,6 +44,11 @@ public class LoginController implements Initializable {
     public TextField txtEmail;
     public PasswordField txtPassword;
     public Label txtLabel;
+    
+    public String email;
+    private String password;
+    
+    
     double x = 0;
     double y = 0;
     
@@ -63,8 +73,8 @@ public class LoginController implements Initializable {
     @FXML
     void signin(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
         
-        String email = txtEmail.getText();
-        String password = txtPassword.getText();
+        email = txtEmail.getText();
+        password = txtPassword.getText();
         
         ConnectionClass connectionClass = new ConnectionClass();
         Connection connection=connectionClass.getConnection();
@@ -76,13 +86,28 @@ public class LoginController implements Initializable {
         if(resultset.next()) {
             txtLabel.setTextFill(Color.GREEN);
             txtLabel.setText("Success");     
+        
+        
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
         
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("home.fxml")));
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
+        Parent root = loader.load();
+        
+        Scene scene = new Scene(root);
+        
+        HomeController scene2Controller = loader.getController();
+        scene2Controller.displayName("Welcome "+resultset.getString(1)+" "+resultset.getString(2)+"!");
+        scene2Controller.getusname(email);
+        
+        
+        scene.setFill(Color.TRANSPARENT);
         stage.setScene(scene);
+        
         stage.show();
+        
         } else {
             txtLabel.setTextFill(Color.TOMATO);
             txtLabel.setText("Incorrect Username/Password");
@@ -96,6 +121,7 @@ public class LoginController implements Initializable {
         stage.close();
         
         Scene scene = new Scene(FXMLLoader.load(getClass().getResource("signup.fxml")));
+        scene.setFill(Color.TRANSPARENT);
         stage.setScene(scene);
         stage.show();
        
@@ -106,9 +132,12 @@ public class LoginController implements Initializable {
         System.exit(0);
     }
     
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
     }    
     
     

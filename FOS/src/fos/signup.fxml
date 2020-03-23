@@ -16,38 +16,37 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<VBox style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fos.SignupController">
+<VBox prefHeight="620.0" prefWidth="920.0" style="-fx-background-color: transparent;" stylesheets="@signup.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fos.SignupController">
    <children>
-      <AnchorPane id="AnchorPane" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" styleClass="mainFxmlClass">
+      <AnchorPane id="AnchorPane" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;" styleClass="mainFxmlClass">
           <stylesheets>
               <URL value="@signup.css" />
           </stylesheets>
          <children>
-            <HBox layoutX="1.0" prefHeight="20.0" prefWidth="600.0" style="-fx-background-color: #a4a4a4;">
+            <HBox layoutX="1.0" prefHeight="20.0" prefWidth="900.0" style="-fx-background-color: #a4a4a4;">
                <children>
                   <Button mnemonicParsing="false" onAction="#closeapp" prefHeight="7.0" prefWidth="18.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="X">
                      <font>
                         <Font name="System Bold" size="9.0" />
                      </font>
                      <HBox.margin>
-                        <Insets left="580.0" />
+                        <Insets left="880.0" />
                      </HBox.margin>
                   </Button>
                </children>
             </HBox>
-            <HBox layoutY="20.0" prefHeight="380.0" prefWidth="601.0">
+            <HBox layoutY="20.0" prefHeight="580.0" prefWidth="900.0">
                <children>
                   <VBox prefHeight="380.0" prefWidth="773.0">
                      <HBox.margin>
-                        <Insets left="183.0" />
+                        <Insets left="273.0" />
                      </HBox.margin>
                      <children>
                         <HBox prefHeight="60.0" prefWidth="364.0">
                            <children>
-                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                                  <HBox.margin>
-                                    <Insets left="10.0" />
+                                    <Insets left="50.0" />
                                  </HBox.margin>
                                  <image>
                                     <Image url="@Images/Logo.png" />
@@ -55,7 +54,7 @@
                               </ImageView>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="FOOD ORDERING SYSTEM">
                                  <font>
-                                    <Font name="Dubai Bold" size="24.0" />
+                                    <Font name="Dubai Bold" size="32.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets left="10.0" top="10.0" />
@@ -63,19 +62,19 @@
                               </Text>
                            </children>
                         </HBox>
-                        <VBox prefHeight="378.0" prefWidth="418.0">
+                        <VBox prefHeight="513.0" prefWidth="627.0">
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up" wrappingWidth="74.5869140625">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                                  <VBox.margin>
-                                    <Insets left="10.0" />
+                                    <Insets left="50.0" top="50.0" />
                                  </VBox.margin>
                               </Text>
                               <HBox prefHeight="40.0" prefWidth="418.0">
                                  <children>
-                                    <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: #a4a4a4; -fx-border-radius: 5px; -fx-background-radius: 5px;">
+                                    <HBox fx:id="bdrFname" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: #a4a4a4; -fx-border-radius: 5px; -fx-background-radius: 5px;" styleClass="textbox">
                                        <HBox.margin>
                                           <Insets bottom="5.0" top="10.0" />
                                        </HBox.margin>
@@ -88,7 +87,7 @@
                                           <TextField fx:id="txtFname" prefHeight="25.0" prefWidth="193.0" promptText="First Name" style="-fx-background-color: transparent;" />
                                        </children>
                                     </HBox>
-                                    <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: #a4a4a4; -fx-border-radius: 5px; -fx-background-radius: 5px;">
+                                    <HBox fx:id="bdrLname" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: #a4a4a4; -fx-border-radius: 5px; -fx-background-radius: 5px;" styleClass="textbox">
                                        <children>
                                           <FontAwesomeIcon iconName="USER">
                                              <HBox.margin>
@@ -102,30 +101,33 @@
                                           </TextField>
                                        </children>
                                        <HBox.margin>
-                                          <Insets bottom="5.0" left="5.0" top="10.0" />
+                                          <Insets bottom="5.0" left="25.0" top="10.0" />
                                        </HBox.margin>
                                     </HBox>
                                  </children>
                                  <VBox.margin>
-                                    <Insets left="5.0" />
+                                    <Insets left="50.0" />
                                  </VBox.margin>
                               </HBox>
-                              <HBox prefHeight="40.0" prefWidth="418.0">
+                              <HBox prefHeight="42.0" prefWidth="558.0">
                                  <children>
-                                    <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: #a4a4a4; -fx-border-radius: 5px; -fx-background-radius: 5px;">
+                                    <HBox fx:id="bdrEmail" prefHeight="27.0" prefWidth="200.0" style="-fx-border-color: #a4a4a4; -fx-border-radius: 5px; -fx-background-radius: 5px;" styleClass="textbox">
                                        <HBox.margin>
                                           <Insets bottom="5.0" left="5.0" top="10.0" />
                                        </HBox.margin>
                                        <children>
-                                          <FontAwesomeIcon iconName="USER">
+                                          <FontAwesomeIcon iconName="ENVELOPE">
                                              <HBox.margin>
                                                 <Insets left="5.0" top="7.0" />
                                              </HBox.margin>
                                           </FontAwesomeIcon>
-                                          <TextField fx:id="txtEmail" prefHeight="25.0" prefWidth="193.0" promptText="Email" style="-fx-background-color: transparent;" />
+                                          <TextField fx:id="txtEmail" prefHeight="25.0" prefWidth="193.0" promptText="Email" style="-fx-background-color: transparent;">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin></TextField>
                                        </children>
                                     </HBox>
-                                    <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: #a4a4a4; -fx-border-radius: 5px; -fx-background-radius: 5px;">
+                                    <HBox fx:id="bdrPassword" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: #a4a4a4; -fx-border-radius: 5px; -fx-background-radius: 5px;" styleClass="textbox">
                                        <children>
                                           <FontAwesomeIcon iconName="LOCK">
                                              <HBox.margin>
@@ -135,22 +137,22 @@
                                           <PasswordField fx:id="txtPassword" prefHeight="25.0" prefWidth="183.0" promptText="Password" style="-fx-background-color: transparent;" />
                                        </children>
                                        <HBox.margin>
-                                          <Insets bottom="5.0" left="5.0" top="10.0" />
+                                          <Insets bottom="5.0" left="25.0" top="10.0" />
                                        </HBox.margin>
                                     </HBox>
                                  </children>
                                  <VBox.margin>
-                                    <Insets />
+                                    <Insets left="45.0" />
                                  </VBox.margin>
                               </HBox>
                               <HBox prefHeight="40.0" prefWidth="418.0">
                                  <children>
-                                    <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: #a4a4a4; -fx-border-radius: 5px; -fx-background-radius: 5px;">
+                                    <HBox fx:id="bdrStreet" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: #a4a4a4; -fx-border-radius: 5px; -fx-background-radius: 5px;" styleClass="textbox">
                                        <HBox.margin>
                                           <Insets bottom="5.0" top="10.0" />
                                        </HBox.margin>
                                        <children>
-                                          <FontAwesomeIcon iconName="HOME">
+                                          <FontAwesomeIcon iconName="STREET_VIEW">
                                              <HBox.margin>
                                                 <Insets left="5.0" top="7.0" />
                                              </HBox.margin>
@@ -162,7 +164,7 @@
                                           </TextField>
                                        </children>
                                     </HBox>
-                                    <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: #a4a4a4; -fx-border-radius: 5px; -fx-background-radius: 5px;">
+                                    <HBox fx:id="bdrCity" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: #a4a4a4; -fx-border-radius: 5px; -fx-background-radius: 5px;" styleClass="textbox">
                                        <children>
                                           <FontAwesomeIcon iconName="HOME">
                                              <HBox.margin>
@@ -176,17 +178,17 @@
                                           </TextField>
                                        </children>
                                        <HBox.margin>
-                                          <Insets bottom="5.0" left="5.0" top="10.0" />
+                                          <Insets bottom="5.0" left="25.0" top="10.0" />
                                        </HBox.margin>
                                     </HBox>
                                  </children>
                                  <VBox.margin>
-                                    <Insets left="5.0" />
+                                    <Insets left="50.0" />
                                  </VBox.margin>
                               </HBox>
                               <HBox prefHeight="40.0" prefWidth="418.0">
                                  <children>
-                                    <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: #a4a4a4; -fx-border-radius: 5px; -fx-background-radius: 5px;">
+                                    <HBox fx:id="bdrState" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: #a4a4a4; -fx-border-radius: 5px; -fx-background-radius: 5px;" styleClass="textbox">
                                        <HBox.margin>
                                           <Insets bottom="5.0" top="10.0" />
                                        </HBox.margin>
@@ -203,7 +205,7 @@
                                           </TextField>
                                        </children>
                                     </HBox>
-                                    <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: #a4a4a4; -fx-border-radius: 5px; -fx-background-radius: 5px;">
+                                    <HBox fx:id="bdrPhone" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: #a4a4a4; -fx-border-radius: 5px; -fx-background-radius: 5px;" styleClass="textbox">
                                        <children>
                                           <FontAwesomeIcon iconName="PHONE">
                                              <HBox.margin>
@@ -217,17 +219,17 @@
                                           </TextField>
                                        </children>
                                        <HBox.margin>
-                                          <Insets bottom="5.0" left="5.0" top="10.0" />
+                                          <Insets bottom="5.0" left="25.0" top="10.0" />
                                        </HBox.margin>
                                     </HBox>
                                  </children>
                                  <VBox.margin>
-                                    <Insets left="5.0" />
+                                    <Insets left="50.0" />
                                  </VBox.margin>
                               </HBox>
-                              <Label fx:id="txtLabel" prefHeight="17.0" prefWidth="275.0" style="-fx-text-alignment: center;" text=" ">
+                              <Label fx:id="txtLabel" alignment="CENTER" prefHeight="17.0" prefWidth="269.0" style="-fx-text-alignment: center;" text=" " textAlignment="CENTER">
                                  <VBox.margin>
-                                    <Insets left="75.0" />
+                                    <Insets left="125.0" top="10.0" />
                                  </VBox.margin>
                               </Label>
                               <Button mnemonicParsing="false" onAction="#signup" style="-fx-background-color: #0079d3; -fx-text-fill: white; -fx-border-radius: 15px; -fx-background-radius: 15px;" text="Sign Up">
@@ -235,14 +237,14 @@
                                     <Insets bottom="5.0" left="75.0" right="75.0" top="5.0" />
                                  </padding>
                                  <VBox.margin>
-                                    <Insets left="100.0" />
+                                    <Insets left="150.0" top="25.0" />
                                  </VBox.margin>
                               </Button>
                               <HBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Already have an account?">
                                        <HBox.margin>
-                                          <Insets left="25.0" top="25.0" />
+                                          <Insets left="100.0" top="25.0" />
                                        </HBox.margin>
                                        <font>
                                           <Font size="14.0" />
@@ -254,6 +256,9 @@
                                        </HBox.margin>
                                     </Button>
                                  </children>
+                                 <VBox.margin>
+                                    <Insets left="50.0" />
+                                 </VBox.margin>
                               </HBox>
                            </children>
                         </VBox>

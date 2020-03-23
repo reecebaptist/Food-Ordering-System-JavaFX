@@ -1,28 +1,1230 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fos.HomeController">
-    <stylesheets>
-        <URL value="@home.css" />
-    </stylesheets>
+<VBox style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fos.HomeController">
    <children>
-      <HBox prefHeight="20.0" prefWidth="600.0" style="-fx-background-color: #a4a4a4;">
+      <AnchorPane id="AnchorPane" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;" styleClass="mainFxmlClass">
+          <stylesheets>
+              <URL value="@home.css" />
+          </stylesheets>
          <children>
-            <Button mnemonicParsing="false" onAction="#closeapp" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-weight: bold;" text="X">
-               <font>
-                  <Font size="9.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="580.0" />
-               </HBox.margin>
-            </Button>
+            <AnchorPane layoutX="200.0" layoutY="20.0" prefHeight="580.0" prefWidth="700.0">
+               <children>
+                  <ScrollPane fx:id="pnlHome" prefHeight="580.0" prefWidth="700.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="656.0" prefWidth="685.0" style="-fx-background-color: white;">
+                           <children>
+                              <VBox layoutY="100.0" prefHeight="480.0" prefWidth="700.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <ImageView fitHeight="217.0" fitWidth="694.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Images/BgHome.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <Label prefHeight="50.0" prefWidth="136.0" text="EXPLORE">
+                                       <font>
+                                          <Font name="Dubai Medium" size="24.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="25.0" top="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <HBox prefHeight="150.0" prefWidth="696.0">
+                                       <children>
+                                          <VBox prefHeight="150.0" prefWidth="150.0" style="-fx-border-color: #a4a4a4; -fx-border-radius: 5px; -fx-background-radius: 5px;">
+                                             <HBox.margin>
+                                                <Insets left="25.0" />
+                                             </HBox.margin>
+                                             <children>
+                                                <ImageView fitHeight="75.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/Menu.png" />
+                                                   </image>
+                                                   <VBox.margin>
+                                                      <Insets left="40.0" />
+                                                   </VBox.margin>
+                                                </ImageView>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Check out our exiciting menu!" textAlignment="CENTER" wrappingWidth="149.91015625">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Text>
+                                                <Button mnemonicParsing="false" onAction="#btnMenu" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #efefef;" text="CHECK MENU" textFill="TOMATO">
+                                                   <VBox.margin>
+                                                      <Insets bottom="1.0" />
+                                                   </VBox.margin>
+                                                   <font>
+                                                      <Font name="Dubai Bold" size="14.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                          <VBox layoutX="35.0" layoutY="10.0" prefHeight="150.0" prefWidth="150.0" style="-fx-border-color: #a4a4a4; -fx-background-radius: 5px; -fx-border-radius: 5px;">
+                                             <children>
+                                                <ImageView fitHeight="75.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/Cart.png" />
+                                                   </image>
+                                                   <VBox.margin>
+                                                      <Insets left="40.0" />
+                                                   </VBox.margin>
+                                                </ImageView>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="See what you've placed in the cart!" textAlignment="CENTER" wrappingWidth="149.91015625">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Text>
+                                                <Button mnemonicParsing="false" onAction="#btnCart" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #efefef;" text="CHECK CART" textFill="TOMATO">
+                                                   <VBox.margin>
+                                                      <Insets bottom="1.0" />
+                                                   </VBox.margin>
+                                                   <font>
+                                                      <Font name="Dubai Bold" size="14.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets left="50.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <Label layoutX="35.0" layoutY="220.0" prefHeight="50.0" prefWidth="203.0" text="DESCRIPTION">
+                                       <font>
+                                          <Font name="Dubai Medium" size="24.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="25.0" top="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Online food ordering is very common these days. Therefore, there is a great need in building methods to do so. This project is built for accomplishing the very same. " wrappingWidth="635.13671875">
+                                       <VBox.margin>
+                                          <Insets left="25.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Through this application, customers can order food, and have it delivered to their doorstep, while sitting in the luxury of their own homes. " wrappingWidth="638.13671875">
+                                       <VBox.margin>
+                                          <Insets left="25.0" top="5.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <HBox prefHeight="100.0" prefWidth="700.0" style="-fx-background-color: #efefef;">
+                                 <children>
+                                    <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Images/Logo.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="25.0" top="10.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Label fx:id="txtLabelHi" alignment="CENTER" prefHeight="47.0" prefWidth="400.0" text=" " textAlignment="RIGHT" textFill="TOMATO">
+                                       <font>
+                                          <Font name="Dubai Medium" size="24.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="50.0" top="25.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+                  <ScrollPane fx:id="pnlContactus" prefHeight="580.0" prefWidth="700.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="534.0" prefWidth="677.0">
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="700.0">
+                                 <children>
+                                    <Text fill="TOMATO" strokeType="OUTSIDE" strokeWidth="0.0" text="CONTACT US">
+                                       <font>
+                                          <Font name="Dubai Bold" size="36.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="25.0" top="15.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <VBox layoutY="100.0" prefHeight="292.0" prefWidth="700.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Have any feeback? Let us know!" wrappingWidth="309.8828125">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="25.0" top="-25.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <TextArea fx:id="txtareaFb" prefHeight="200.0" prefWidth="528.0" promptText="Write your feedback here!">
+                                       <VBox.margin>
+                                          <Insets left="50.0" right="200.0" top="25.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextArea>
+                                    <Label fx:id="txtResponseLabel" alignment="CENTER" prefHeight="20.0" prefWidth="239.0" text=" " textFill="GREEN">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="150.0" top="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Button mnemonicParsing="false" onAction="#btnFeedback" style="-fx-background-color: #0079d3; -fx-text-fill: white; -fx-border-radius: 15px; -fx-background-radius: 15px;" text="Submit">
+                                       <VBox.margin>
+                                          <Insets left="150.0" top="15.0" />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="100.0" right="100.0" top="5.0" />
+                                       </padding>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <VBox layoutY="392.0" prefHeight="200.0" prefWidth="664.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Group Details" wrappingWidth="309.8828125">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="25.0" top="10.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Siddharth Dahiya - 18BCE0446" wrappingWidth="256.09375">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="50.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text layoutX="10.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reece D'Souza     - 18BCE0483" wrappingWidth="258.8828125">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="50.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+                  <ScrollPane fx:id="pnlMenu" prefHeight="580.0" prefWidth="700.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="578.0" prefWidth="697.0">
+                           <children>
+                              <VBox prefHeight="100.0" prefWidth="700.0">
+                                 <children>
+                                    <Text fill="TOMATO" strokeType="OUTSIDE" strokeWidth="0.0" text="MENU">
+                                       <font>
+                                          <Font name="Dubai Bold" size="36.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="25.0" top="5.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Choose from our list of delicious and mouth-watering dishes. Personally handcrafted just for you.">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="25.0" top="-5.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <ScrollPane prefHeight="493.0" prefWidth="700.0" AnchorPane.topAnchor="85.0">
+                                 <content>
+                                    <VBox prefHeight="1602.0" prefWidth="676.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BIRYANI">
+                                             <font>
+                                                <Font name="Dubai Medium" size="24.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="25.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <HBox prefHeight="111.0" prefWidth="651.0">
+                                             <VBox.margin>
+                                                <Insets left="25.0" right="100.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/biryaniChicken.jpg" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <ImageView fitHeight="50.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/nonvegLogo.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" top="2.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <VBox prefHeight="85.0" prefWidth="190.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Royal Chicken Biryani">
+                                                         <font>
+                                                            <Font name="Dubai Bold" size="16.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="10.0" top="25.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="₹ 199">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                   </children>
+                                                </VBox>
+                                                <Button fx:id="btnAddRCB" mnemonicParsing="false" onAction="#addBiryaniChicken" style="-fx-background-color: #0079d3; -fx-text-fill: white; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="ADD TO CART">
+                                                   <HBox.margin>
+                                                      <Insets top="40.0" />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="25.0" right="25.0" top="5.0" />
+                                                   </padding>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="111.0" prefWidth="651.0">
+                                             <children>
+                                                <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/biryaniEgg.jpg" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <ImageView fitHeight="50.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/nonvegLogo.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" top="2.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <VBox prefHeight="68.0" prefWidth="190.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nizami Egg Biryani " wrappingWidth="161.18399047851562">
+                                                         <font>
+                                                            <Font name="Dubai Bold" size="16.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="10.0" top="25.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="₹ 159">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                   </children>
+                                                </VBox>
+                                                <Button fx:id="btnAddNEB" mnemonicParsing="false" onAction="#addBiryaniEgg" style="-fx-background-color: #0079d3; -fx-text-fill: white; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="ADD TO CART">
+                                                   <HBox.margin>
+                                                      <Insets top="40.0" />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="25.0" right="25.0" top="5.0" />
+                                                   </padding>
+                                                </Button>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="25.0" right="100.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox prefHeight="111.0" prefWidth="651.0">
+                                             <children>
+                                                <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/biryaniMutton.jpg" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <ImageView fitHeight="50.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/nonvegLogo.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" top="2.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <VBox prefHeight="68.0" prefWidth="190.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Raja Mutton Biryani ">
+                                                         <font>
+                                                            <Font name="Dubai Bold" size="16.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="10.0" top="25.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="₹ 299">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                   </children>
+                                                </VBox>
+                                                <Button fx:id="btnAddRMB" mnemonicParsing="false" onAction="#addBiryaniMutton" style="-fx-background-color: #0079d3; -fx-text-fill: white; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="ADD TO CART">
+                                                   <HBox.margin>
+                                                      <Insets top="40.0" />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="25.0" right="25.0" top="5.0" />
+                                                   </padding>
+                                                </Button>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="25.0" right="100.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox prefHeight="111.0" prefWidth="651.0">
+                                             <children>
+                                                <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/biryaniVeg.jpg" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <ImageView fitHeight="50.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/vegLogo.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="7.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <VBox prefHeight="68.0" prefWidth="190.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Supreme Veg. Biryani" wrappingWidth="156.62399291992188">
+                                                         <font>
+                                                            <Font name="Dubai Bold" size="16.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="11.0" top="25.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="₹ 149">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="11.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                   </children>
+                                                </VBox>
+                                                <Button fx:id="btnAddSVB" mnemonicParsing="false" onAction="#addBiryaniVeg" style="-fx-background-color: #0079d3; -fx-text-fill: white; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="ADD TO CART">
+                                                   <HBox.margin>
+                                                      <Insets top="40.0" />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="25.0" right="25.0" top="5.0" />
+                                                   </padding>
+                                                </Button>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="25.0" right="100.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="KEBABS">
+                                             <font>
+                                                <Font name="Dubai Medium" size="24.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="25.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <HBox prefHeight="111.0" prefWidth="651.0">
+                                             <children>
+                                                <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/kebabChickenGarlic.jpg" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <ImageView fitHeight="50.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/nonvegLogo.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" top="2.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <VBox prefHeight="68.0" prefWidth="190.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Chicken Garlic Kebab">
+                                                         <font>
+                                                            <Font name="Dubai Bold" size="16.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="10.0" top="25.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="₹ 239">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                   </children>
+                                                </VBox>
+                                                <Button fx:id="btnAddCGK" mnemonicParsing="false" onAction="#addKebabsChickenGarlic" style="-fx-background-color: #0079d3; -fx-text-fill: white; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="ADD TO CART">
+                                                   <HBox.margin>
+                                                      <Insets top="40.0" />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="25.0" right="25.0" top="5.0" />
+                                                   </padding>
+                                                </Button>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="25.0" right="100.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox prefHeight="111.0" prefWidth="651.0">
+                                             <children>
+                                                <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/kebabChickenKalmi.jpg" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <ImageView fitHeight="50.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/nonvegLogo.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" top="2.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <VBox prefHeight="68.0" prefWidth="190.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Chicken Kalmi Kebab">
+                                                         <font>
+                                                            <Font name="Dubai Bold" size="16.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="10.0" top="25.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="₹ 259">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                   </children>
+                                                </VBox>
+                                                <Button fx:id="btnAddCKK" mnemonicParsing="false" onAction="#addKebabsChickenKalmi" style="-fx-background-color: #0079d3; -fx-text-fill: white; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="ADD TO CART">
+                                                   <HBox.margin>
+                                                      <Insets top="40.0" />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="25.0" right="25.0" top="5.0" />
+                                                   </padding>
+                                                </Button>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="25.0" right="100.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox prefHeight="111.0" prefWidth="651.0">
+                                             <children>
+                                                <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/kebabChickenTikka.jpg" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <ImageView fitHeight="50.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/nonvegLogo.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" top="2.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <VBox prefHeight="68.0" prefWidth="190.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Chicken Tikka Kebab">
+                                                         <font>
+                                                            <Font name="Dubai Bold" size="16.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="10.0" top="25.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="₹ 229">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                   </children>
+                                                </VBox>
+                                                <Button fx:id="btnAddCTK" mnemonicParsing="false" onAction="#addKebabsChickenTikka" style="-fx-background-color: #0079d3; -fx-text-fill: white; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="ADD TO CART">
+                                                   <HBox.margin>
+                                                      <Insets top="40.0" />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="25.0" right="25.0" top="5.0" />
+                                                   </padding>
+                                                </Button>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="25.0" right="100.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox prefHeight="111.0" prefWidth="651.0">
+                                             <children>
+                                                <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/kebabPaneerTikka.jpg" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <ImageView fitHeight="50.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/vegLogo.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="7.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <VBox prefHeight="68.0" prefWidth="190.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Paneer Tikka Kebab" wrappingWidth="156.62399291992188">
+                                                         <font>
+                                                            <Font name="Dubai Bold" size="16.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="11.0" top="25.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="₹ 199">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="11.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                   </children>
+                                                </VBox>
+                                                <Button fx:id="btnAddPTK" mnemonicParsing="false" onAction="#addKebabsPaneerTikka" style="-fx-background-color: #0079d3; -fx-text-fill: white; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="ADD TO CART">
+                                                   <HBox.margin>
+                                                      <Insets top="40.0" />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="25.0" right="25.0" top="5.0" />
+                                                   </padding>
+                                                </Button>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="25.0" right="100.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SHAWARMA">
+                                             <font>
+                                                <Font name="Dubai Medium" size="24.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="25.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <HBox prefHeight="111.0" prefWidth="651.0">
+                                             <children>
+                                                <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/shawarmaChicken.jpg" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <ImageView fitHeight="50.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/nonvegLogo.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" top="2.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <VBox prefHeight="68.0" prefWidth="190.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Chicken Shawarma">
+                                                         <font>
+                                                            <Font name="Dubai Bold" size="16.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="10.0" top="25.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="₹ 119">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                   </children>
+                                                </VBox>
+                                                <Button fx:id="btnAddCS" mnemonicParsing="false" onAction="#addShawarmaChicken" style="-fx-background-color: #0079d3; -fx-text-fill: white; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="ADD TO CART">
+                                                   <HBox.margin>
+                                                      <Insets top="40.0" />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="25.0" right="25.0" top="5.0" />
+                                                   </padding>
+                                                </Button>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="25.0" right="100.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox prefHeight="111.0" prefWidth="651.0">
+                                             <children>
+                                                <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/shawarmaSpecialChicken.jpg" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <ImageView fitHeight="50.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/nonvegLogo.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" top="2.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <VBox prefHeight="68.0" prefWidth="190.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Special Chicken Shawarma">
+                                                         <font>
+                                                            <Font name="Dubai Bold" size="16.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="10.0" top="25.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="₹ 159">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                   </children>
+                                                </VBox>
+                                                <Button fx:id="btnAddSCS" mnemonicParsing="false" onAction="#addShawarmaSpecialC" style="-fx-background-color: #0079d3; -fx-text-fill: white; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="ADD TO CART">
+                                                   <HBox.margin>
+                                                      <Insets top="40.0" />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="25.0" right="25.0" top="5.0" />
+                                                   </padding>
+                                                </Button>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="25.0" right="100.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SNACKS">
+                                             <font>
+                                                <Font name="Dubai Medium" size="24.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="25.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <HBox prefHeight="111.0" prefWidth="651.0">
+                                             <children>
+                                                <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/snacksChai.jpg" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <ImageView fitHeight="50.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/vegLogo.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="7.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <VBox prefHeight="68.0" prefWidth="190.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Masala Chai" wrappingWidth="156.62399291992188">
+                                                         <font>
+                                                            <Font name="Dubai Bold" size="16.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="11.0" top="25.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="₹ 19">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="11.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                   </children>
+                                                </VBox>
+                                                <Button fx:id="btnAddMC" mnemonicParsing="false" onAction="#addSnacksMasalaChai" style="-fx-background-color: #0079d3; -fx-text-fill: white; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="ADD TO CART">
+                                                   <HBox.margin>
+                                                      <Insets top="40.0" />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="25.0" right="25.0" top="5.0" />
+                                                   </padding>
+                                                </Button>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="25.0" right="100.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox prefHeight="111.0" prefWidth="651.0">
+                                             <children>
+                                                <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/snacksOsmaniaBiscuits.jpg" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <ImageView fitHeight="50.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/vegLogo.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="7.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <VBox prefHeight="68.0" prefWidth="190.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Osmanian Biscuits" wrappingWidth="156.62399291992188">
+                                                         <font>
+                                                            <Font name="Dubai Bold" size="16.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="11.0" top="25.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="₹ 50 / Box">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="11.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                   </children>
+                                                </VBox>
+                                                <Button fx:id="btnAddOB" mnemonicParsing="false" onAction="#addSnacksBiscuits" style="-fx-background-color: #0079d3; -fx-text-fill: white; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="ADD TO CART">
+                                                   <HBox.margin>
+                                                      <Insets top="40.0" />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="25.0" right="25.0" top="5.0" />
+                                                   </padding>
+                                                </Button>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="25.0" right="100.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox prefHeight="111.0" prefWidth="651.0">
+                                             <children>
+                                                <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/snacksVegPuff.jpg" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <ImageView fitHeight="50.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/vegLogo.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="7.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <VBox prefHeight="68.0" prefWidth="190.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Veg. Puffs" wrappingWidth="156.62399291992188">
+                                                         <font>
+                                                            <Font name="Dubai Bold" size="16.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="11.0" top="25.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="₹ 19">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="11.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                   </children>
+                                                </VBox>
+                                                <Button fx:id="btnAddVP" mnemonicParsing="false" onAction="#addSnacksVegPuffs" style="-fx-background-color: #0079d3; -fx-text-fill: white; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="ADD TO CART">
+                                                   <HBox.margin>
+                                                      <Insets top="40.0" />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="25.0" right="25.0" top="5.0" />
+                                                   </padding>
+                                                </Button>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="25.0" right="100.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox prefHeight="111.0" prefWidth="651.0">
+                                             <children>
+                                                <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/snacksEggPuff.jpg" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <ImageView fitHeight="50.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/nonvegLogo.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" top="2.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <VBox prefHeight="68.0" prefWidth="190.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Egg Puffs">
+                                                         <font>
+                                                            <Font name="Dubai Bold" size="16.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="10.0" top="25.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="₹ 19">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                   </children>
+                                                </VBox>
+                                                <Button fx:id="btnAddEP" mnemonicParsing="false" onAction="#addSnacksEggPuff" style="-fx-background-color: #0079d3; -fx-text-fill: white; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="ADD TO CART">
+                                                   <HBox.margin>
+                                                      <Insets top="40.0" />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="25.0" right="25.0" top="5.0" />
+                                                   </padding>
+                                                </Button>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="25.0" right="100.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox prefHeight="111.0" prefWidth="651.0">
+                                             <children>
+                                                <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/snacksVegSamosa.jpg" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <ImageView fitHeight="50.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/vegLogo.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="7.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <VBox prefHeight="68.0" prefWidth="190.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Veg. Samosa" wrappingWidth="156.62399291992188">
+                                                         <font>
+                                                            <Font name="Dubai Bold" size="16.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="11.0" top="25.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="₹ 14">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="11.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                   </children>
+                                                </VBox>
+                                                <Button fx:id="btnAddVS" mnemonicParsing="false" onAction="#addSnacksVegSamosa" style="-fx-background-color: #0079d3; -fx-text-fill: white; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="ADD TO CART">
+                                                   <HBox.margin>
+                                                      <Insets top="40.0" />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="25.0" right="25.0" top="5.0" />
+                                                   </padding>
+                                                </Button>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="25.0" right="100.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+                  <ScrollPane fx:id="pnlCart" prefHeight="580.0" prefWidth="700.0">
+                     <content>
+                        <VBox prefHeight="577.0" prefWidth="698.0">
+                           <children>
+                              <Text fill="TOMATO" strokeType="OUTSIDE" strokeWidth="0.0" text="CART">
+                                 <font>
+                                    <Font name="Dubai Bold" size="36.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="25.0" right="5.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <ScrollPane prefHeight="352.0" prefWidth="698.0">
+                                 <content>
+                                    <TableView fx:id="tableCart" prefHeight="350.0" prefWidth="694.0">
+                                      <columns>
+                                        <TableColumn fx:id="colItemName" maxWidth="313.0" minWidth="313.0" prefWidth="313.0" text="Item Name" />
+                                        <TableColumn fx:id="colCost" maxWidth="116.0" minWidth="116.0" prefWidth="116.0" text="Cost" />
+                                          <TableColumn fx:id="colQuantity" maxWidth="101.0" minWidth="101.0" prefWidth="101.0" style="-fx-text-alignment: center;" text="Quantity" />
+                                          <TableColumn fx:id="colAdd" maxWidth="80.0" minWidth="80.0" style="-fx-text-alignment: center;" text=" " />
+                                          <TableColumn fx:id="colRemove" maxWidth="80.0" minWidth="80.0" style="-fx-text-alignment: center;" text=" " />
+                                      </columns>
+                                    </TableView>
+                                 </content>
+                              </ScrollPane>
+                              <HBox prefHeight="56.0" prefWidth="698.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#btnClearAll" style="-fx-background-color: red; -fx-background-radius: 10px; -fx-text-fill: white; -fx-border-radius: 10px;" styleClass="clear" stylesheets="@home.css" text="CLEAR ALL" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="25.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button layoutX="35.0" layoutY="20.0" mnemonicParsing="false" onAction="#btnClear" style="-fx-background-color: red; -fx-background-radius: 10px; -fx-text-fill: white; -fx-border-radius: 10px;" styleClass="clear" stylesheets="@home.css" text="CLEAR" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="25.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button layoutX="166.0" layoutY="20.0" mnemonicParsing="false" onAction="#btnPlaceOrder" style="-fx-background-color: green; -fx-background-radius: 10px; -fx-text-fill: white; -fx-border-radius: 10px;" styleClass="clear" stylesheets="@home.css" text="PLACE ORDER" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="350.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label text="GRAND TOTAL   ₹">
+                                       <font>
+                                          <Font name="Dubai Bold" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="450.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label fx:id="txtGrandTotal" text="0000">
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Dubai Medium" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+            <VBox layoutY="20.0" prefHeight="580.0" prefWidth="200.0" style="-fx-background-color: tomato;" stylesheets="@home.css">
+               <children>
+                  <Button graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnHome" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-width: 3px 0px 3px 0px;" styleClass="textbox" stylesheets="@home.css" text="HOME" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" iconName="HOME" />
+                     </graphic>
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button graphicTextGap="10.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnMenu" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-width: 3px 0px 3px 0px;" styleClass="textbox" stylesheets="@home.css" text="MENU" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" iconName="BARS" />
+                     </graphic>
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button graphicTextGap="10.0" layoutX="10.0" layoutY="60.0" mnemonicParsing="false" onAction="#btnCart" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-width: 3px 0px 3px 0px;" styleClass="textbox" stylesheets="@home.css" text="CART" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" iconName="SHOPPING_CART" />
+                     </graphic>
+                  </Button>
+                  <Button graphicTextGap="10.0" layoutX="10.0" layoutY="110.0" mnemonicParsing="false" onAction="#btnContact" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-width: 3px 0px 3px 0px;" styleClass="textbox" stylesheets="@home.css" text="CONTACT US" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" iconName="PHONE" />
+                     </graphic>
+                  </Button>
+                  <Button graphicTextGap="10.0" layoutX="10.0" layoutY="110.0" mnemonicParsing="false" onAction="#logout" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-width: 3px 0px 3px 0px;" styleClass="textbox" stylesheets="@home.css" text="LOG OUT" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" iconName="POWER_OFF" />
+                     </graphic>
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="380.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </VBox>
+            <HBox prefHeight="20.0" prefWidth="900.0" style="-fx-background-color: #a4a4a4;">
+               <rotationAxis>
+                  <Point3D />
+               </rotationAxis>
+               <children>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#closeapp" style="-fx-background-color: transparent; -fx-font-weight: bold; -fx-font-size: 8px;" text="X" textFill="WHITE">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="880.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
          </children>
-      </HBox>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
    </children>
-</AnchorPane>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>

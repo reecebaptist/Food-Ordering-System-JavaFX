@@ -8,3 +8,8 @@
 	-fx-background-repeat: no-repeat;
 
 }
+
+.textbox:hover {
+    -fx-border-color: blue;
+    -fx-scale-y: 1.1;
+}

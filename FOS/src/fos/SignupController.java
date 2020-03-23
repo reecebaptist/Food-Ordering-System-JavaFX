@@ -23,8 +23,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+
 
 /**
  * FXML Controller class
@@ -38,13 +41,24 @@ public class SignupController implements Initializable {
      */
     public TextField txtEmail;
     public PasswordField txtPassword;
+    
     public Label txtLabel;
+    
     public TextField txtFname;
     public TextField txtLname;
     public TextField txtStreet;
     public TextField txtCity;
     public TextField txtState;
     public TextField txtPhone;
+    
+    public HBox bdrFname;
+    public HBox bdrLname;
+    public HBox bdrEmail;
+    public HBox bdrPassword;
+    public HBox bdrStreet;
+    public HBox bdrCity;
+    public HBox bdrState;
+    public HBox bdrPhone;
     
     double x = 0;
     double y = 0;
@@ -76,18 +90,83 @@ public class SignupController implements Initializable {
         String state = txtState.getText();
         String phone = txtPhone.getText();
         
+        setBlack();
         
+        if(txtFname.getText().isEmpty()) {
+                bdrFname.setStyle("-fx-border-color: red");
+                txtLabel.setTextFill(Color.TOMATO);
+            txtLabel.setText("Enter the highlighted box(es)!");     
+            } else {
+                bdrFname.setStyle("-fx-border-color: #a4a4a4");
+            }
+            if(txtLname.getText().isEmpty()) {
+                bdrLname.setStyle("-fx-border-color: red"); 
+                       txtLabel.setTextFill(Color.TOMATO);
+            txtLabel.setText("Enter the highlighted box(es)!"); 
+            } else {
+                bdrFname.setStyle("-fx-border-color: #a4a4a4");
+            }
+            if(txtEmail.getText().isEmpty()) {
+                bdrEmail.setStyle("-fx-border-color: red");
+                       txtLabel.setTextFill(Color.TOMATO);
+            txtLabel.setText("Enter the highlighted box(es)!"); 
+            } else {
+                bdrFname.setStyle("-fx-border-color: #a4a4a4");
+            }
+            if(txtPassword.getText().isEmpty()) {
+                bdrPassword.setStyle("-fx-border-color: red");
+                      txtLabel.setTextFill(Color.TOMATO);
+            txtLabel.setText("Enter the highlighted box(es)!"); 
+            } else {
+                bdrFname.setStyle("-fx-border-color: #a4a4a4");
+            }
+            if(txtStreet.getText().isEmpty()) {
+                bdrStreet.setStyle("-fx-border-color: red");
+                    txtLabel.setTextFill(Color.TOMATO);
+            txtLabel.setText("Enter the highlighted box(es)!"); 
+            } else {
+                bdrFname.setStyle("-fx-border-color: #a4a4a4");
+            }
+            if(txtCity.getText().isEmpty()) {
+                bdrCity.setStyle("-fx-border-color: red");
+                     txtLabel.setTextFill(Color.TOMATO);
+            txtLabel.setText("Enter the highlighted box(es)!"); 
+            } else {
+                bdrFname.setStyle("-fx-border-color: #a4a4a4");
+            }
+            if(txtState.getText().isEmpty()) {
+                bdrState.setStyle("-fx-border-color: red");
+                     txtLabel.setTextFill(Color.TOMATO);
+            txtLabel.setText("Enter the highlighted box(es)!"); 
+            } else {
+                bdrFname.setStyle("-fx-border-color: #a4a4a4");
+            }
+            if(txtPhone.getText().isEmpty()) {
+                bdrPhone.setStyle("-fx-border-color: red");
+                      txtLabel.setTextFill(Color.TOMATO);
+            txtLabel.setText("Enter the highlighted box(es)!"); 
+            } else {
+                bdrFname.setStyle("-fx-border-color: #a4a4a4");
+            }
+
+             if(!txtFname.getText().isEmpty() && !txtLname.getText().isEmpty() && !txtEmail.getText().isEmpty() && !txtPassword.getText().isEmpty() && !txtStreet.getText().isEmpty() && !txtCity.getText().isEmpty() && !txtState.getText().isEmpty() && !txtPhone.getText().isEmpty()) {
         ConnectionClass connectionClass = new ConnectionClass();
         Connection connection=connectionClass.getConnection();
         
         Statement statement1=connection.createStatement();
         String sql1="SELECT * FROM users WHERE email='"+email+"';";
         ResultSet resultset = statement1.executeQuery(sql1);
+        
         if(resultset.next()) {
             txtLabel.setTextFill(Color.TOMATO);
             txtLabel.setText("Already Exists! Choose another Email ID");      
+            bdrEmail.setStyle("-fx-border-color: red");
         } else {
-            String sql="INSERT INTO users VALUES('"+fname+"','"+lname+"','"+email+"','"+password+"','"+street+"','"+city+"','"+state+"','"+phone+"\')";
+            
+            setBlack();
+                
+            String sql = "INSERT INTO users VALUES('"+fname+"','"+lname+"','"+email+"','"+password+"','"+street+"','"+city+"','"+state+"','"+phone+"')";
+            
             Statement statement=connection.createStatement();
             statement.executeUpdate(sql);
             txtLabel.setTextFill(Color.GREEN);
@@ -103,6 +182,8 @@ public class SignupController implements Initializable {
             txtPhone.setText("");
             
         }
+        }
+     
     }
     
     @FXML
@@ -112,6 +193,7 @@ public class SignupController implements Initializable {
         stage.close();
         
         Scene scene = new Scene(FXMLLoader.load(getClass().getResource("login.fxml")));
+        scene.setFill(Color.TRANSPARENT);
         stage.setScene(scene);
         stage.show();
         
@@ -122,9 +204,21 @@ public class SignupController implements Initializable {
         System.exit(0);
     }
     
+    void setBlack() {
+        bdrFname.setStyle("-fx-border-color: #a4a4a4");
+        bdrLname.setStyle("-fx-border-color: #a4a4a4");
+        bdrEmail.setStyle("-fx-border-color: #a4a4a4");
+        bdrPassword.setStyle("-fx-border-color: #a4a4a4");
+        bdrStreet.setStyle("-fx-border-color: #a4a4a4");
+        bdrCity.setStyle("-fx-border-color: #a4a4a4");
+        bdrState.setStyle("-fx-border-color: #a4a4a4");
+        bdrPhone.setStyle("-fx-border-color: #a4a4a4");
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        setBlack();       
+   
     }    
     
 }
