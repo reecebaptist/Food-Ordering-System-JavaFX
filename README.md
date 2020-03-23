@@ -9,6 +9,7 @@ IDEs used:
   
   This is a project developed solely for educational purposes. The images are not owned by me. 
   
- <big> Output: </big>
- <img src="FOS\Outputs\Page1.png" height=200 width=500>
+ <big> Output: </big><br>
+ 
+ <img src="FOS\Outputs\Page1.png" height=900 width=1000>
   
