@@ -3,8 +3,13 @@
  */
 
 .mainFxmlClass {
-	-fx-background-image: url("Images/Bg.jpg");
-	-fx-background-size:contain;
+	-fx-background-image: url("Images/BgWhite.png");
+	-fx-background-size: 300px 600px;
 	-fx-background-repeat: no-repeat;
 
+}
+
+.textbox:hover {
+    -fx-border-color: blue;
+    -fx-scale-y: 1.1;
 }

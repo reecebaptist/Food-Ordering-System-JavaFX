@@ -5,3 +5,20 @@
 .mainFxmlClass {
 
 }
+
+.textbox:hover {
+    -fx-border-color: white;
+    -fx-font-weight: bold;
+}
+
+.clear:hover {
+    -fx-text-fill: white;
+}
+.table-column {
+  -fx-alignment: CENTER;
+}
+
+.custom-align { 
+  -fx-alignment: left; 
+} 
+

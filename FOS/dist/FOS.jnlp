@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="FOS.jar" size="1194522" download="eager" />
+    <jar href="FOS.jar" size="5947667" download="eager" />
     <jar href="lib\fontawesomefx-8.1.jar" size="179086" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.48-bin.jar" size="1006959" download="eager" />
   </resources>
