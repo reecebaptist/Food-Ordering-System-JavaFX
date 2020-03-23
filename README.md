@@ -11,5 +11,13 @@ IDEs used:
   
  <big> Output: </big><br>
  
- <img src="FOS\Outputs\Page1.png" height=400 width=600>
+ <img src="FOS\Outputs\Page1.png" height=400 width=600><br>
+ <img src="FOS\Outputs\Page2.png" height=400 width=600><br>
+ <img src="FOS\Outputs\Page3.png" height=400 width=600><br>
+ <img src="FOS\Outputs\Page4.png" height=400 width=600><br>
+ <img src="FOS\Outputs\Page5.png" height=400 width=600><br>
+ <img src="FOS\Outputs\Page6.png" height=400 width=600><br>
+ <img src="FOS\Outputs\Page7.png" height=400 width=600><br>
+ <img src="FOS\Outputs\Page8.png" height=400 width=600><br>
+ <img src="FOS\Outputs\Page9.png" height=400 width=600>
   
